@@ -2,4 +2,4 @@
 # Script displaying a list of currently
 #  running process
 
-top
+ps -u
