@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script displaying a list of currently
+#  running process
+
+top
