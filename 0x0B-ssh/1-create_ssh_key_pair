@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A Script for creating a keypair
+
+ssh-keygen -t rsa -b 4096
