@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Configures a new Ubuntu machine by installing
-# Nginx where it should be listening on port 80
-# Serve a page that would return a Hello World string
+# Nginx and listening on port 80
+# Page that would return a Hello World string
 #
 
 echo -e "Updating package list and installing Nginx.\n"
@@ -10,18 +10,18 @@ sudo apt-get update -y -qq && \
 
 echo -e "\nStarting Nginx service and configuring firewall.\n"
 
-# Starting Nginx service
+# Starts Nginx service
 sudo service nginx start
 
-# Allowing Nginx on firewall, if ufw is installed
+# Allows Nginx on firewall, if ufw is installed
 if command -v ufw >/dev/null 2>&1; then
     sudo ufw allow 'Nginx HTTP'
 fi
 
-# Creating a new index.html file with "Hello World!"
+# Creates a new index.html file with "Hello World!"
 echo "<html><body><h1>Hello World!</h1></body></html>" | sudo tee /var/www/html/index.html
 
-# Restarting Nginx to apply changes
+# Restarts Nginx to apply changes
 sudo service nginx restart
 
 echo -e "\nConfiguration completed successfully. ✅\n"
